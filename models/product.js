@@ -7,9 +7,10 @@ const ProductSchema = new mongoose.Schema({
   },
   price:{
     type:Number
-    }
+    },
+    category: { type: mongoose.Schema.Types.ObjectId, ref: 'Category', required: true },
 });
 
-const Product = mongoose.model("Dog", ProductSchema);
+const Product = mongoose.model("Product", ProductSchema);
 
 module.exports = { Product };
